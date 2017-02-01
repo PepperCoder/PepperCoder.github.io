@@ -38,12 +38,21 @@
 		το CDN.
 		Μια άλλη σημείωση είναι πως χρησιμοποιούμε και θα υποβάλλουμε το
 		τις κανονικές και όχι τις minimized εκδόσεις των css, καθώς είναι πιο
-		εύκολη η επεξεργασία τους (αν υπάρξει ανάγκη).-->
+		εύκολη η επεξεργασία και προβολή τους (αν υπάρξει ανάγκη).-->
 		<link href="css/bootstrap.css" rel="stylesheet"> 
+		<!-- Συμπεριλαμβάνουμε και ένα custom.css φτιαγμένο από εμάς. Το 
+		συμπεριλαμβάνουμε μετά το original bootstrap.css για να επικρατούν οι
+		δικές του οδηγίες. -->
+		<link href="css/custom.css" rel="stylesheet">
 		<!-- Η συμπερίληψη των βιβλιοθηκών jQuery και bootstrap.js, για λόγους
-		ταχύτητας στη φόρτωση, ενδείκνυται να δηλώνεται πριν από το </body>
-		Και έτσι κλεινουμε το head κομμάτι.	 -->
+		ταχύτητας στη φόρτωση, ενδείκνυται να δηλώνεται πριν από το </body>. -->
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<!-- Και έτσι κλεινουμε το head κομμάτι.	 -->
 	</head>
+	<!-- Ξεκινάει το body και ενεργοποιούμε τη δυνατότητα data-spy στο scroll της
+	οθόνης. Έτσι, όταν θα είμαστε στο x section του site θα γίνεται active και το
+	αντίστοιχο link στη navbar. -->
 	<body data-spy="scroll" data-target="#navHeaderCollapse">
 		<!-- Είσαγουμε την μπάρα πλοήγησης navbar. Επιλέγουμε το αντεστραμμένο στυλ
 		(navbar-inverse) και την τοποθετούμε σταθερά στο πάνω μέρος της σελίδας
@@ -51,16 +60,22 @@
 		σταθερά στην κορυφή, ακόμα και όταν κάνουμε scroll.	-->
 		<nav class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container">
-				<!-- Ορίζουμε το header της navbar  -->
+				<!-- Ορίζουμε το header της navbar. -->
 				<div class = "navbar-header">
+					<!-- Ξεκινάμε με το να κατασκευάσουμε το κουμπί που θα φαίνεται 
+					σε μικρότερες οθόνες. Η λειτουργικότητα ορίζεται από το "collapse"
+					και το περιεχόμενο δείχνει στο αντίστοιχο id. -->
 					<button type = "button" class = "navbar-toggle" data-toggle = "collapse" data-target = "#navHeaderCollapse"
 						<span class = "icon-bar"></span>
 						<span class = "icon-bar"></span>
 						<span class = "icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#jumbo">Σύλλογος Ονειροναυτών</a>
+					<a class="navbar-brand navbar-link" href="#jumbo"><img src="images/logo.jpg" style="max-width:50px; margin-top: -7px;"/></a>
+					<a class="navbar-brand navbar-link" href="#jumbo"><strong>Σύλλογος Ονειροναυτών</strong></a>
 				</div>
 				<div class="collapse navbar-collapse" id = "navHeaderCollapse">
+					<!-- Ο τρόπος που γίνεται η σύνδεση, είναι με μία αδιάτακτη λίστα,
+					όπου κάθε γραμμή της κάνει αναφορά στα id των sections του site. -->
 					<ul class="nav navbar-nav navbar-right" id="nav">
 						<li><a href="#whoAreWe"> Ποιοί Είμαστε</a></li>
 						<li><a href="#draseis"> Δράσεις</a></li>
@@ -70,9 +85,11 @@
 				</div>
 			</div>
 		</nav>
-		<!-- Ακολουθεί το jumbotron με το πρώτο μέρος της σελίδας. -->
-		<div class = "container">
-			<div class = "jumbotron" id = "jumbo">
+		
+		<!-- Ακολουθεί το jumbotron με το πρώτο μέρος της σελίδας. 
+		Διαμορφώνουμε τον τίτλο ως h1.-->
+		<div id = "jumbo">
+			<div class = "jumbotron">
 				<h1>Σύλλογος Ονειροναυτών</h1>
 				<p>Ο μέσος όρος της διάρκειας που ονειρευόμαστε στη ζωή μας είναι
 				6 χρόνια. Για 2100 μέρες, ταξιδεύουμε σε αχαρτογράφητα νερά. Στο 
@@ -81,10 +98,16 @@
 				μας. Αν σε ενδιαφέρει και σένα, επιβιβάσου...</p>
 			</div>
 		</div>
+		
 		<!-- Ακολουθεί το section "Ποιοι Είμαστε". -->
-		<div class = "container" id = "whoAreWe" style = "padding-top:70px">
-			<div class="row">
-				<div class="col-sm-8">
+		<div id = "whoAreWe">
+			<!-- Εκμεταλλευόμενοι το grid του bootstrap, τοποθετούμε μία σειρά
+			με το format που ορίζουμε στο custom.css και μέσα σε αυτή,... --> 
+			<div class="row classRow">
+				<!-- χωρίζουμε το διαθέσιμο εύρος των 12 στηλών σε δύο υπερστήλες, μία 
+				με 8 και διαμόρφωση ορισμένη στο custom.css που θα φιλοξενεί το κομμάτι 
+				"Τι είναι ο σύλλογος"... -->
+				<div class="col-sm-8 classCol">
 					<h2>Τι είναι ο Σύλλογος Ονειροναυτών;</h2>
 					<p>Πριν από λίγα χρόνια, δυο φίλοι που έκαναν διακοπές στην 
 					Ελαφόνησο συνάντησαν ένα παλιό φίλο τους. Χαρήκανε πολύ 
@@ -96,7 +119,7 @@
 					<p>Την επόμενη μέρα, μίλησαν στο τηλέφωνο. Για πρώτη φορά μετά
 					από 7 χρόνια. Και όλοι είχαν δει το ίδιο όνειρο... </p>
 					<p>Αν τελείωνε εκεί, θα ήταν σαν μία ιστορία τρόμου, που την
-					διηγήσαι σε κατασκηνώσεις, γύρω απ' τη φωτιά. Δεν τελείωσε εκεί 
+					διηγείσαι σε κατασκηνώσεις, γύρω απ' τη φωτιά. Δεν τελείωσε εκεί 
 					όμως! Αφού συνειδητοποίησαν πως, όχι μόνο μοιράστηκαν το ίδιο
 					όνειρο αλλά κατάφεραν να επικοινωνήσουν και τα νέα τους μέσα σε 
 					αυτό, η επικοινωνία τους έγινε καθημερινή και αποφάσισαν να 
@@ -111,19 +134,23 @@
 					<p>Έτσι, δημιουργήθηκε ο Σύλλογος Ονειροναυτών.</p>
 				</div>
 				<div class="col-sm-4">
-					<div class="alert alert-success">
+					<!-- και μία με 4 που φιλοξενεί το alert-info, διαμορφωμένο στο
+					custom.caa με το σκοπό του συλλόγου. -->
+					<div class="alert alert-info" id="goal">
 						<h2>Σκοπός του Συλλόγου:</h2> 
 						Η έρευνα και εφαρμογή μεθόδων και τεχνικών για την απόκτηση
 						της ικανότητας, να βιώνουμε το όνειρο ως συνειδητή εμπειρία
-						και να μπορούμε να αλληλεπιδρούμε με τα στοιχεία του.
+						και να μπορούμε να αλληλοεπιδρούμε με τα στοιχεία του.
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- Ακολουθεί το section "Δράσεις". -->
-		<div class = "container" id = "draseis" style = "padding-top:70px">
-			<div class="row">
-				<div class="col-sm-4">
+		
+		<!-- Ακολουθεί το section "Δράσεις". 
+		Με παρόμοιο τρόπο χωρίζουμε το πλέγμα σε μία γραμμή 3 στηλών για τις δράσεις.-->
+		<div id = "draseis">
+			<div class="row classRow">
+				<div class="col-sm-4 classCol">
 					<h2>Ομιλία του δρ. Έρικ Ζαν.</h2>
 					<p>Ο δρ. Έρικ Ζαν, κορυφαίος νευροψυχολόγος, θεωρείται παγκοσμίως
 					ο πιο ειδικός πάνω στον τρόπο επίδρασης του ονείρου στον εγκέφαλο, 
@@ -134,15 +161,18 @@
 					που φαίνονται απαραίτητες για την κινητοποίηση των χολινεργικών 
 					γεφυροπρομηκικών νευρώνων που ευθύνονται για τον παράδοξο ύπνο (σ. 
 					Παράδοξος είναι ο ύπνος με όνειρα).</p>
-					<br>
-					<br>
-					<img class="img-circle img-responsive center-block" src="images/EricZann.jpg" alt="Ο Έρικ Ζανν.">
-					<br>
+					<!-- Εδώ εισάγουμε την εικόνα της δράσης. Ορίζουμε περιθώρια στο
+					custom.css και την κάνουμε responsive και κύκλο. -->					
+					<div class="imgf">
+						<img class="img-circle img-responsive center-block" src="images/EricZann.jpg" alt="Ο Έρικ Ζανν.">
+					</div>
+					<!-- Από κάτω, τοποθετούμε με μικρότερα, έντονα και πλάγια γράμματα
+					τη λεζάντα της εικόνας. -->
 					<div class="caption text-center">
-						<p class = "small"><i><strong>Ο Έρικ Ζανν.</strong></i></p>
+						<p class = "small"><i><strong>Ο δρ. Έρικ Ζανν.</strong></i></p>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 classCol">
 					<h2>Ύπνος - Μια αποκαλυπτική ιστορία.</h2>
 					<p>Ο Χ.Φ.Λάβκραφτ, ο μόνος έγκριτος ερευνητής των αρχαίων ριζών
 					που κρύβονται πίσω από τον ανθρωπομορφισμό του ύπνου, χωρίς να 
@@ -153,83 +183,97 @@
 					<p>Αν σας ακούγεται ωραίο, την Παρασκευή 10 Φεβρουαρίου, στο αμφιθέατρο 
 					του συλλόγου μας, η αφήγηση από τον ίδιο της πραγματικής ιστορίας που
 					διαδραματίστηκε ενώπιόν του, μπορεί να σας κάνει να αλλάξετε γνώμη</p>
-					<br>
-					<br>
+					<div class="imgf">
 					<img class="img-circle img-responsive center-block" src="images/HPLovecraft.jpg" alt="Ο Χ.Φ.Λάβκραφτ.">
-					<br>
+					</div>
 					<div class="caption text-center">
 						<p class = "small"><i><strong>Ο Χ.Φ.Λάβκραφτ.</strong></i></p>
 					</div>
 				</div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 classCol">
 					<h2>Ομαδικές συνεδρίες ονειροναυτικής.</h2> 
 					<p>Από το Σάββατο 11 Φεβρουαρίου, ξεκινάνε πάλι οι ομαδικές συνεδρίες
 					ονειροναυτικής. Ύστερα από την περυσινή επιτυχία και τις πολλές δηλώσεις 
 					συμμετοχής για φέτος, το υπνωτήριό μας θα ανοίγει κάθε δύο Σαββατοκύριακα
 					για όλα τα μέλη μας. Φέτος, σκοπός είναι να συντάξουμε μία λίστα με 
 					ασφαλείς τεχνικές έκτακτης έγερσης.</p> 
-					<br>
-					<br>
+					<div class="imgf">
 					<img class="img-circle img-responsive center-block" src="images/Sleeping.jpg" alt="Ομαδικές συνεδρίες ονειροναυτικής.">
-					<br>
+					</div>
 					<div class="caption text-center">
 						<p class = "small"><i><strong>Ομαδικές συνεδρίες ονειροναυτικής.</strong></i></p>
 					</div>
 				</div>
 			</div>
 		</div>
+		
 		<!-- Ακολουθεί το section "Γίνε Μέλος". -->
-		<div class = "container" id = "gineMelos" style = "padding-top:70px">
-		<form>
-			<h1> Γίνε μέλος, είναι απλό!</h1>
-			<br>
-			<div class = "form-group row">
-				<div class="col-sm-6">
-					<input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Ονοματεπώνυμο" required="true">
-				</div>
-				<div class="col-sm-6">
-					<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" required="true">
-				</div>
+		<div id = "gineMelos">
+			<div class = "row classRow">
+				<form>
+				<!-- Το καινούριο στοιχείο είναι η τοποθέτηση μίας φόρμας μέσα στη γραμμή. Η φόρμα
+				ορίζεται και αυτή με γραμμές και στήλες. Τα στοιχεία της φόρμας που καθορίζονται
+				είναι το είδος δεδομένων, είδος στοιχείου, περιγραφή, ενδεικτικό κείμενο και
+				αναγκαιότητα συμπλήρωσης. -->
+					<h1>Γίνε μέλος, είναι απλό!</h1>
+					<br>
+					<div class = "form-group row">
+						<div class="col-sm-6">
+							<input type="text" class="form-control" id="inputName" aria-describedby="nameHelp" placeholder="Ονοματεπώνυμο" required="true">
+						</div>
+						<div class="col-sm-6">
+							<input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp" placeholder="Email" required="true">
+						</div>
+					</div>
+					<br>
+					<div class="form-group row">
+						<div class="col-sm-12">
+							<textarea class="form-control" id="exampleTextarea" rows="5" placeholder="Πως μπορείς να βοηθήσεις;"></textarea>
+						</div>
+					</div>
+					<!-- Στο τέλος, ακολουθεί το κουμπί υποβολής. Βασικό, μεγάλο και τιτλοφορημένο. -->
+					<div style="padding-bottom: 25px">
+						<button type="submit" class="btn btn-primary btn-lg">Υποβολή</button>
+					</div>
+				</form>
 			</div>
-			<br>
-			<div class="form-group row">
-				<div class="col-sm-12">
-					<textarea class="form-control" id="exampleTextarea" rows="3" placeholder="Πως μπορείς να βοηθήσεις;"></textarea>
-				</div>
-			</div>
-			<br>
-			<button type="submit" class="btn btn-primary">Υποβολή</button>
-		</form>
 		</div>
+		
 		<!-- Ακολουθεί το section "Επικοινωνία". -->
-		<div class="container" id = "contact" style = "padding-top:70px">
-			<h2>Επικοινώνησε μαζί μας.</h2> 
-			<br>
-			<div class="row">
-				<div class="col-sm-1">
+		<div id = "contact">
+			<div class = "row classRow">
+				<div class = "col-sm-12 col-left">
+					<h2>Επικοινώνησε μαζί μας.</h2> 
+				</div>
+			</div>			
+			<!-- Το καινούριο στοιχείο εδώ είναι η εισαγωγή glyphicns. Σε κάθε γραμμή
+			στοιχείων, στην πρώτη στήλη μπαίνει το glyphicon και στη δεύτερη το περιεχόμενο. -->
+			<div class="row classRow">
+				<div class="col-sm-1 col-left classSmCol">
 					<p><span class="glyphicon glyphicon-home"></span>
 				</div>
-				<div class = "col-sm-11">
+				<div class = "col-sm-11 col-left">
 					<p>Πυθίας 1 κ' Κάλχα,</p>
 					<p>Νέοι Δελφοί - 123 45,</p>
 					<p>Aθήνα.</p>
 				</div>
 			</div>
-			<br>
-			<div class="row">
-				<div class="col-sm-1">
+			<div class="row classRow">
+				<div class="col-sm-1 classSmCol">
 					<p><span class="glyphicon glyphicon-phone"></span>
 				</div>
 				<div class = "col-sm-11">
 					<p>212-34.56.789</p>
 				</div>
 			</div>
-			<br>
-			<div class="row">
-				<div class="col-sm-1">
+			<div class="row classRow">
+				<div class="col-sm-1 classSmCol">
 					<p><span class="glyphicon glyphicon-envelope"></span>
 				</div>
 				<div class = "col-sm-11">
+					<!-- Εδώ, με το mailto: προστίθεται η λειτουργικότητα του να δημιουργείται
+					ένα mail με το προεπιλεγμένο πρόγραμμα e-mail του υπολογιστή, με προσυμπληρωμένη
+					διεύθυνση παραλήπτη. -->
 					<p><a href="mailto:#">dreamnauts@dreamnauts.not</a></p>
 				</div>
 			</div>
