@@ -57,16 +57,19 @@
 		το CDN.
 		Μια άλλη σημείωση είναι πως χρησιμοποιούμε και θα υποβάλλουμε το
 		τις κανονικές και όχι τις minimized εκδόσεις των css, καθώς είναι πιο
-		εύκολη η επεξεργασία και προβολή τους (αν υπάρξει ανάγκη).-->
-		<link href="css/bootstrap.css" rel="stylesheet"> 
+		εύκολη η επεξεργασία και προβολή τους (αν υπάρξει ανάγκη).
+		<link href="css/bootstrap.css" rel="stylesheet"> -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"> 
 		<!-- Συμπεριλαμβάνουμε και ένα custom.css φτιαγμένο από εμάς. Το 
 		συμπεριλαμβάνουμε μετά το original bootstrap.css για να επικρατούν οι
 		δικές του οδηγίες. -->
 		<link href="css/custom.css" rel="stylesheet">
 		<!-- Η συμπερίληψη των βιβλιοθηκών jQuery και bootstrap.js, για λόγους
-		ταχύτητας στη φόρτωση, ενδείκνυται να δηλώνεται πριν από το </body>.  -->
+		ταχύτητας στη φόρτωση, ενδείκνυται να δηλώνεται πριν από το </body>. 
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>  -->
 		<!-- Και έτσι κλεινουμε το head κομμάτι.	 -->
 	</head>
 	<!-- Ξεκινάει το body και ενεργοποιούμε τη δυνατότητα data-spy στο scroll της
@@ -298,9 +301,11 @@
 			</div>
 		</div>				
 		
-		<!-- Συμπερίληψη των απαραίτητων βιβλιοθηκών (βλ. σχόλια στο head) -->
+		<!-- Συμπερίληψη των απαραίτητων βιβλιοθηκών (βλ. σχόλια στο head) 
 		<script src="js/jquery.js"></script>
-		<script src="js/bootstrap.js"></script> 
+		<script src="js/bootstrap.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		
 	</body>
 </html>
